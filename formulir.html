@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Formulir</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Judul Website</h1>
+        <img src="logo.png" alt="Logo">
+    </header>
+    <div class="content">
+        <nav>
+            <ul>
+                <li><a href="index.html">Halaman Utama</a></li>
+                <li><a href="formulir.html">Halaman Formulir</a></li>
+                <li><a href="tabel.html">Halaman Tabel</a></li>
+            </ul>
+        </nav>
+        <h2>Form Pendaftaran</h2>
+        <form action="submit.php" method="get">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required><br>
+
+            <label for="nim">NIM:</label>
+            <input type="text" id="nim" name="nim" required><br>
+
+            <label for="prodi">Program Studi:</label>
+            <input type="text" id="prodi" name="prodi" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="jenis-kelamin">Jenis Kelamin:</label>
+            <input type="radio" id="jenis-kelamin" name="jenis-kelamin" value="Laki-laki" required> Laki-laki
+            <input type="radio" id="jenis-kelamin" name="jenis-kelamin" value="Perempuan" required> Perempuan<br>
+
+            <label for="tgl-lahir">Tanggal Lahir:</label>
+            <input type="date" id="tgl-lahir" name="tgl-lahir" required><br>
+
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" name="alamat" required></textarea><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2023 Hak Cipta | Website Contoh</p>
+    </footer>
+</body>
+</html>
