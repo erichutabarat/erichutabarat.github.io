@@ -40,7 +40,25 @@ function deteksi(data){
 	      G03: 'ya',
 	      G04: 'ya'
 	    },
-	    action: 'Rule 1: Anda memiliki risiko tinggi terkena HIV/AIDS. Segera berkonsultasi dengan dokter.'
+	    action: 'Rule 1: Anda memiliki risiko tinggi terkena HIV/AIDS, Herpes, dan Chlamydia. Segera berkonsultasi dengan dokter.'
+	  },
+	  {
+	    conditions: {
+	      G01: 'ya',
+	      G02: 'ya',
+	      G03: 'ya',
+	      G04: 'tidak'
+	    },
+	    action: 'Rule 2: Anda memiliki risiko tinggi terkena HIV AIDS dan Herpes. Segera berkonsultasi dengan dokter.'
+	  },
+	  {
+	    conditions: {
+	      G01: 'ya',
+	      G02: 'ya',
+	      G03: 'tidak',
+	      G04: 'ya'
+	    },
+	    action: 'Rule 3: Anda memiliki risiko tinggi terkena HIV AIDS dan Chlamydia. Segera berkonsultasi dengan dokter.'
 	  },
 	  {
 	    conditions: {
@@ -49,7 +67,70 @@ function deteksi(data){
 	      G03: 'tidak',
 	      G04: 'tidak'
 	    },
-	    action: 'Rule 2: Anda memiliki risiko rendah terkena HIV/AIDS. Tetap waspada dan lakukan pemeriksaan rutin.'
+	    action: 'Rule 4: Anda memiliki risiko tinggi terkena HIV AIDS. Segera berkonsultasi dengan dokter.'
+	  },
+	  {
+	    conditions: {
+	      G01: 'ya',
+	      G02: 'tidak',
+	      G03: 'ya',
+	      G04: 'ya'
+	    },
+	    action: 'Rule 5: Anda memiliki risiko tinggi terkena Herpes dan Chlamydia. Segera berkonsultasi dengan dokter.'
+	  },
+	  {
+	    conditions: {
+	      G01: 'ya',
+	      G02: 'tidak',
+	      G03: 'ya',
+	      G04: 'tidak'
+	    },
+	    action: 'Rule 6: Anda memiliki risiko tinggi terkena Herpes. Segera berkonsultasi dengan dokter.'
+	  },
+	  {
+	    conditions: {
+	      G01: 'ya',
+	      G02: 'tidak',
+	      G03: 'tidak',
+	      G04: 'ya'
+	    },
+	    action: 'Rule 7: Anda memiliki risiko tinggi terkena Chlamydia. Segera berkonsultasi dengan dokter.'
+	  },
+	  {
+	    conditions: {
+	      G01: 'ya',
+	      G02: 'tidak',
+	      G03: 'tidak',
+	      G04: 'tidak'
+	    },
+	    action: 'Rule 8: Anda memiliki risiko rendah terkena penyakit kelamin. Tetap waspada dan lakukan pemeriksaan rutin.'
+	  },
+	  {
+	    conditions: {
+	      G01: 'tidak',
+	      G02: 'ya',
+	      G03: 'ya',
+	      G04: 'ya'
+	    },
+	    action: 'Rule 9: Anda memiliki risiko rendah terkena HIV AIDS dan Herpes. Segera berkonsultasi dengan dokter.'
+	  },
+	  {
+	    conditions: {
+	      G01: 'tidak',
+	      G02: 'ya',
+	      G03: 'ya',
+	      G04: 'tidak'
+	    },
+	    action: 'Rule 10: Anda memiliki risiko rendah terkena HIV AIDS dan Herpes. Segera berkonsultasi dengan dokter.'
+	  },
+	  {
+	    conditions: {
+	      G01: 'tidak',
+	      G02: 'ya',
+	      G03: 'tidak',
+	      G04: 'ya'
+	    },
+	    action: 'Rule 11: Anda memiliki risiko rendah terkena HIV AIDS dan Chlamydia. Segera berkonsultasi dengan dokter.'
 	  },
 	  {
 	    conditions: {
@@ -58,7 +139,16 @@ function deteksi(data){
 	      G03: 'tidak',
 	      G04: 'tidak'
 	    },
-	    action: 'Rule 3: Anda memiliki risiko rendah terkena HIV/AIDS. Tetap waspada dan lakukan pemeriksaan rutin.'
+	    action: 'Rule 12: Anda memiliki risiko rendah terkena HIV AIDS. Segera berkonsultasi dengan dokter.'
+	  },
+	  {
+	    conditions: {
+	      G01: 'tidak',
+	      G02: 'tidak',
+	      G03: 'ya',
+	      G04: 'ya'
+	    },
+	    action: 'Rule 13: Anda memiliki rendah tinggi terkena Herpes dan Chlamydia. Segera berkonsultasi dengan dokter.'
 	  },
 	  {
 	    conditions: {
@@ -67,7 +157,7 @@ function deteksi(data){
 	      G03: 'ya',
 	      G04: 'tidak'
 	    },
-	    action: 'Rule 4: Anda mungkin mengalami masalah kesehatan lainnya. Segera periksakan diri ke dokter.'
+	    action: 'Rule 14: Anda memiliki risiko rendah terkena Herpes. Segera berkonsultasi dengan dokter.'
 	  },
 	  {
 	    conditions: {
@@ -76,7 +166,7 @@ function deteksi(data){
 	      G03: 'tidak',
 	      G04: 'ya'
 	    },
-	    action: 'Rule 5: Anda mungkin mengalami masalah kesehatan lainnya. Segera periksakan diri ke dokter.'
+	    action: 'Rule 15: Anda memiliki risiko rendah terkena Chlamydia. Segera berkonsultasi dengan dokter.'
 	  },
 	  {
 	    conditions: {
@@ -85,9 +175,10 @@ function deteksi(data){
 	      G03: 'tidak',
 	      G04: 'tidak'
 	    },
-	    action: 'Rule 6: Tidak ada gejala yang mencurigakan. Tetap jaga kesehatan dan lakukan pemeriksaan rutin.'
+	    action: 'Rule 16: Tidak ada gejala yang mencurigakan. Tetap jaga kesehatan dan lakukan pemeriksaan rutin.'
 	  }
 	];
+
 	for (let i = 0; i < rules.length; i++) {
 	    let rule = rules[i];
 	    let conditionsMet = true;
